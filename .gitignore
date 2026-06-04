@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.coverage
+*.pt
+*.sqlite3
+*.db
+data/store_intelligence.db
+.DS_Store
