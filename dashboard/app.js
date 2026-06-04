@@ -164,12 +164,13 @@ async function fetchHeatmap() {
         const cell = document.createElement('div');
         cell.className = 'heatmap-cell';
         
-        // Color based on intensity
-        const hue = 260 - (zone.intensity * 1.6); // purple → red as intensity grows
-        const sat = 60 + (zone.intensity * 0.3);
-        const light = 15 + (zone.intensity * 0.2);
-        cell.style.backgroundColor = `hsla(${hue}, ${sat}%, ${light}%, 0.6)`;
-        cell.style.borderLeft = `3px solid hsl(${hue}, ${sat}%, ${light + 20}%)`;
+        // Color based on intensity (0 to 100)
+        // Green hues: light/soft green to a slightly deeper emerald green
+        const hue = 140 + (zone.intensity * 0.2); // 140 -> 160
+        const sat = 40 + (zone.intensity * 0.4);  // 40% -> 80%
+        const light = 95 - (zone.intensity * 0.3); // 95% -> 65%
+        cell.style.backgroundColor = `hsla(${hue}, ${sat}%, ${light}%, 0.8)`;
+        cell.style.borderLeft = `4px solid hsl(${hue}, ${sat}%, ${light - 15}%)`;
 
         const dwellSec = (zone.avg_dwell_ms / 1000).toFixed(1);
         const confidenceTag = zone.data_confidence === 'low' 
