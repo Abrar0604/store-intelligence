@@ -1,0 +1,146 @@
+{
+  "store_id": "STORE_BLR_002",
+  "store_name": "Purplle Brigade Road Bangalore",
+  "city": "Bangalore",
+  "address": "Brigade Road",
+  "open_hours": {
+    "open": "10:00",
+    "close": "22:00",
+    "timezone": "Asia/Kolkata"
+  },
+  "cameras": [
+    {
+      "camera_id": "CAM_FLOOR_01",
+      "file": "CAM 1.mp4",
+      "description": "Main floor — skincare wall (Korean, Face Shop, Good Vibes, DermDoc, Minimalist)",
+      "type": "floor",
+      "resolution": "1920x1080",
+      "fps": 30,
+      "zones_covered": ["SKINCARE_KOREAN", "SKINCARE_NATURAL", "SKINCARE_CLINICAL", "FOH"]
+    },
+    {
+      "camera_id": "CAM_FLOOR_02",
+      "file": "CAM 2.mp4",
+      "description": "Main floor — makeup wall (Maybelline, Lakme, Faces Canada, Swiss Beauty, Accessories)",
+      "type": "floor",
+      "resolution": "1920x1080",
+      "fps": 30,
+      "zones_covered": ["MAKEUP_LIPS_EYES", "MAKEUP_FACE", "FRAGRANCE", "ACCESSORIES", "FOH"]
+    },
+    {
+      "camera_id": "CAM_ENTRY_01",
+      "file": "CAM 3.mp4",
+      "description": "Entry/Exit — glass door and entrance threshold",
+      "type": "entry",
+      "resolution": "1920x1080",
+      "fps": 30,
+      "zones_covered": ["ENTRY_EXIT"]
+    },
+    {
+      "camera_id": "CAM_STORAGE_01",
+      "file": "CAM 4.mp4",
+      "description": "Back storage room — staff only, excluded from customer analytics",
+      "type": "storage",
+      "resolution": "1920x1080",
+      "fps": 25,
+      "zones_covered": ["STORAGE"],
+      "excluded": true,
+      "exclusion_reason": "Storage room with no customer activity"
+    },
+    {
+      "camera_id": "CAM_BILLING_01",
+      "file": "CAM 5.mp4",
+      "description": "Billing/Cash counter area — purchase tracking, queue monitoring",
+      "type": "billing",
+      "resolution": "1920x1080",
+      "fps": 25,
+      "zones_covered": ["BILLING", "CASH_COUNTER"]
+    }
+  ],
+  "zones": [
+    {
+      "zone_id": "ENTRY_EXIT",
+      "zone_name": "Store Entrance",
+      "zone_type": "threshold",
+      "camera_id": "CAM_ENTRY_01",
+      "description": "Glass door entrance/exit point"
+    },
+    {
+      "zone_id": "SKINCARE_KOREAN",
+      "zone_name": "Korean Skincare",
+      "zone_type": "product",
+      "camera_id": "CAM_FLOOR_01",
+      "brands": ["FarmStay", "EB Korean", "The Face Shop", "COSRX", "Round Lab", "Klairs"],
+      "description": "Left wall — Korean skincare brands"
+    },
+    {
+      "zone_id": "SKINCARE_NATURAL",
+      "zone_name": "Natural Skincare",
+      "zone_type": "product",
+      "camera_id": "CAM_FLOOR_01",
+      "brands": ["Good Vibes", "DermDoc", "Mamaearth", "Neemli Naturals"],
+      "description": "Center-left wall — natural/Ayurvedic skincare"
+    },
+    {
+      "zone_id": "SKINCARE_CLINICAL",
+      "zone_name": "Clinical Skincare",
+      "zone_type": "product",
+      "camera_id": "CAM_FLOOR_01",
+      "brands": ["Minimalist", "Aqualogica", "Lakme Skin", "The Derma Co"],
+      "description": "Center-right wall — clinical/science skincare"
+    },
+    {
+      "zone_id": "FOH",
+      "zone_name": "Front of House",
+      "zone_type": "display",
+      "camera_id": "CAM_FLOOR_01",
+      "description": "Central display area with promotional table — fragrance, nail unit, makeup unit"
+    },
+    {
+      "zone_id": "MAKEUP_FACE",
+      "zone_name": "Face Makeup",
+      "zone_type": "product",
+      "camera_id": "CAM_FLOOR_02",
+      "brands": ["Lakme", "Swiss Beauty", "Faces Canada"],
+      "description": "Makeup wall — face products (foundation, concealer, blush)"
+    },
+    {
+      "zone_id": "MAKEUP_LIPS_EYES",
+      "zone_name": "Lips & Eyes Makeup",
+      "zone_type": "product",
+      "camera_id": "CAM_FLOOR_02",
+      "brands": ["Maybelline", "L'Oreal", "Mars", "NY Bae"],
+      "description": "Makeup wall — lips and eyes products"
+    },
+    {
+      "zone_id": "FRAGRANCE",
+      "zone_name": "Fragrance",
+      "zone_type": "product",
+      "camera_id": "CAM_FLOOR_02",
+      "brands": ["Various"],
+      "description": "Fragrance and perfume section near nail unit"
+    },
+    {
+      "zone_id": "ACCESSORIES",
+      "zone_name": "Accessories",
+      "zone_type": "product",
+      "camera_id": "CAM_FLOOR_02",
+      "brands": ["Various"],
+      "description": "Accessories display — brushes, tools, accessories"
+    },
+    {
+      "zone_id": "BILLING",
+      "zone_name": "Billing Counter",
+      "zone_type": "service",
+      "camera_id": "CAM_BILLING_01",
+      "description": "Cash counter and billing area — purchase completion"
+    },
+    {
+      "zone_id": "CASH_COUNTER",
+      "zone_name": "Cash Counter Queue",
+      "zone_type": "queue",
+      "camera_id": "CAM_BILLING_01",
+      "description": "Queue area in front of billing counter"
+    }
+  ]
+}

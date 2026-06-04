@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Purplle Store Intelligence — Real-time retail analytics dashboard">
+    <title>Store Intelligence Dashboard — STORE_BLR_002</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="main-header">
+        <div class="header-left">
+            <div class="logo">
+                <span class="logo-icon">📊</span>
+                <span class="logo-text">Store Intelligence</span>
+            </div>
+            <div class="store-badge" id="store-badge">
+                <span class="store-dot"></span>
+                STORE_BLR_002
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="status-indicator" id="connection-status">
+                <span class="status-dot connected"></span>
+                <span class="status-text">Live</span>
+            </div>
+            <div class="last-update" id="last-update">Last update: —</div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Metric Cards -->
+        <section class="metrics-grid" id="metrics-section">
+            <div class="metric-card" id="card-visitors">
+                <div class="metric-icon">👥</div>
+                <div class="metric-content">
+                    <div class="metric-value" id="metric-visitors">0</div>
+                    <div class="metric-label">Unique Visitors</div>
+                </div>
+            </div>
+            <div class="metric-card highlight" id="card-conversion">
+                <div class="metric-icon">💰</div>
+                <div class="metric-content">
+                    <div class="metric-value" id="metric-conversion">0%</div>
+                    <div class="metric-label">Conversion Rate</div>
+                </div>
+            </div>
+            <div class="metric-card" id="card-queue">
+                <div class="metric-icon">🧾</div>
+                <div class="metric-content">
+                    <div class="metric-value" id="metric-queue">0</div>
+                    <div class="metric-label">Queue Depth</div>
+                </div>
+            </div>
+            <div class="metric-card" id="card-revenue">
+                <div class="metric-icon">₹</div>
+                <div class="metric-content">
+                    <div class="metric-value" id="metric-revenue">₹0</div>
+                    <div class="metric-label">Revenue Today</div>
+                </div>
+            </div>
+            <div class="metric-card" id="card-abandonment">
+                <div class="metric-icon">🚪</div>
+                <div class="metric-content">
+                    <div class="metric-value" id="metric-abandonment">0%</div>
+                    <div class="metric-label">Abandonment Rate</div>
+                </div>
+            </div>
+            <div class="metric-card" id="card-transactions">
+                <div class="metric-icon">🛒</div>
+                <div class="metric-content">
+                    <div class="metric-value" id="metric-transactions">0</div>
+                    <div class="metric-label">Transactions</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Middle Row: Funnel + Heatmap -->
+        <section class="middle-row">
+            <!-- Conversion Funnel -->
+            <div class="panel funnel-panel" id="funnel-panel">
+                <h2 class="panel-title">Conversion Funnel</h2>
+                <div class="funnel-container" id="funnel-container">
+                    <div class="funnel-loading">Loading funnel data...</div>
+                </div>
+            </div>
+
+            <!-- Zone Heatmap -->
+            <div class="panel heatmap-panel" id="heatmap-panel">
+                <h2 class="panel-title">Zone Heatmap</h2>
+                <div class="heatmap-container" id="heatmap-container">
+                    <div class="heatmap-loading">Loading heatmap data...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Row: Anomalies + Dwell Times -->
+        <section class="bottom-row">
+            <!-- Active Anomalies -->
+            <div class="panel anomalies-panel" id="anomalies-panel">
+                <h2 class="panel-title">
+                    Active Anomalies
+                    <span class="anomaly-count" id="anomaly-count">0</span>
+                </h2>
+                <div class="anomalies-list" id="anomalies-list">
+                    <div class="no-anomalies">
+                        <span class="check-icon">✅</span>
+                        No active anomalies
+                    </div>
+                </div>
+            </div>
+
+            <!-- Zone Dwell Times -->
+            <div class="panel dwell-panel" id="dwell-panel">
+                <h2 class="panel-title">Average Dwell Time by Zone</h2>
+                <div class="dwell-chart" id="dwell-chart">
+                    <div class="dwell-loading">Loading dwell data...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Health Status Bar -->
+        <section class="health-bar" id="health-bar">
+            <div class="health-item" id="health-status">
+                <span class="health-icon">💚</span>
+                <span>System: <strong>Healthy</strong></span>
+            </div>
+            <div class="health-item" id="health-db">
+                <span class="health-icon">🗄️</span>
+                <span>DB: <strong>Connected</strong></span>
+            </div>
+            <div class="health-item" id="health-uptime">
+                <span class="health-icon">⏱️</span>
+                <span>Uptime: <strong id="uptime-value">0s</strong></span>
+            </div>
+            <div class="health-item" id="health-events">
+                <span class="health-icon">📡</span>
+                <span>Events: <strong id="events-count">0</strong></span>
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
