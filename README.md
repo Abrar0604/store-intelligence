@@ -13,7 +13,7 @@ An end-to-end pipeline that processes CCTV camera feeds using computer vision (Y
 ### 1. Start the API (Docker)
 
 ```bash
-git clone <repo-url> && cd store-intelligence
+git clone https://github.com/Abrar0604/store-intelligence && cd store-intelligence
 docker compose up -d
 ```
 
